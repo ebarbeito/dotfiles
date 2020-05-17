@@ -1,0 +1,3 @@
+# Ctrl+R incremental search with UP-DOWN arrows
+"\C-[[A": history-search-backward
+"\C-[[B": history-search-forward

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+function dos2unix
+{
+	for file in $*; do
+		cat $file | sed 's///g' > $file.out
+		mv $file.out $file
+	done
+}
+
+if [ $# -lt 1 ]; then
+	echo "usage: $(basename $0) files"
+else
+	dos2unix "$*"
+fi

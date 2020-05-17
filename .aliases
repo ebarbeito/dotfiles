@@ -1,0 +1,43 @@
+# cd aliases
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
+# grep aliases
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# ls aliases
+if ls -F --color=auto >&/dev/null; then
+    alias ls='ls --color=auto'
+else
+    if ls -G >&/dev/null; then
+        alias ls='ls -G'
+    fi
+fi
+alias l='ls'
+alias la='ls -hla'
+alias ll='ls -hl'
+alias laf='la | grep "^-"' # only files
+alias lad='la | grep "^d"' # list directories
+alias lal='la | grep "^l"' # list links
+
+# more aliases
+alias cls='clear;ls'
+alias df='df -H'
+type colordiff >/dev/null 2>&1 && alias diff='colordiff'
+alias functions='declare -F | sed "s/^declare -f //"'
+alias killjobs='kill -9 $(jobs -p)'
+alias path='echo -e ${PATH//:/\\n}'
+alias rmgit='find . -type d -name .git | xargs rm -rf'
+alias rmsvn='find . -type d -name .svn | xargs rm -rf'
+alias sockets='lsof -i'
+alias svim='sudo vim'
+alias tohex='printf "%x\n"'
+alias tooct='printf "%o\n"'
+alias trim="sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g'"
+alias vi='vim'
+alias wcr='wc `find . -type f`'
+alias wget='wget -c'

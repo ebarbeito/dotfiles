@@ -1,0 +1,19 @@
+# vim as the default editor
+export EDITOR=vim
+
+# don't put duplicate lines or lines starting with space in the history.
+export HISTCONTROL=ignoreboth
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
+# add color to the terminal output
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# grep with color (violet)
+export GREP_COLOR='1;35;40'
+
+# custom prompt
+export PS1="\n\[\e[1;37m\]\342\224\214(\[\e[1;32m\]\t\[\e[1;37m\])(j:\[\e[1;32m\]\j\[\e[1;37m\], e:\[\e[1;32m\]\$?\[\e[1;37m\])(\[\e[1;32m\]\$(ls -1 | wc -l | sed 's: ::g')\[\e[1;37m\]f, \[\e[1;32m\]\$(ls -lah | grep -m 1 total | sed 's/total //')\[\e[1;37m\]b)\[\033[0m\]\$(parse_git_branch)\n\[\e[1;37m\]\342\224\224 \[\033[0m\]\u@\h \[\e[1;32m\]\w\[\e[1;37m\] $ \[\e[0m\]"

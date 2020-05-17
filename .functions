@@ -1,0 +1,38 @@
+# simple calcs
+#calc() { awk "BEGIN{ print $* }"; }
+
+# print file ignoring #-comments and blank lines
+catconf() { egrep -v '(^#|^\s*$|^\s*\t*#)' $1; }
+
+# mkdir and enter it immediately
+mkcd() { /bin/mkdir -p $1 && cd $1; }
+
+# top ten most used commands
+mostused() { history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head; }
+
+# what git branch am i on?
+parse_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ \1/"; }
+
+# find pid numbers easily. pidof override
+#pidof() { ps aux | grep $1 | awk '{print $2}' |head -n -1; }
+
+# sprunge: command line pastebin
+sprunge() { curl -sF 'sprunge=<-' 'http://sprunge.us' < "${1:-/dev/stdin}"; }
+
+# tail -f with search highlight
+t() { tail -f $1 | perl -pe "s/$2/\e[1;35;40m$&\e[0m/g"; }
+
+# decimal to binary
+tobin() { echo "obase=2; $1" | bc; }
+
+# http response headers (-I with steroids)
+url_headers() { curl -sv "$@" 2>&1 >/dev/null | grep -v "^\*" | grep -v "^}" | cut -c3-; }
+
+# see where a url (shortener for example) points
+url_location() { curl -s -D - -o /dev/null "$@"  |grep -i ^location |cut -d' ' -f2; }
+
+# query for current weather
+weather() { curl -4 wttr.in/${1:-Alicante,+Spain}; }
+
+# fast simple http server
+webserver() { python -m SimpleHTTPServer $1; }
