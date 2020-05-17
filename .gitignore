@@ -1,6 +1,6 @@
 ._system/osx/.brewfile.lock.json
-._system/work/*
-!._system/work/.gitkeep
+._system/custom/*
+!._system/custom/.gitkeep
 .bin/.unused
 .wallpaper/*
 !.wallpaper/.gitkeep

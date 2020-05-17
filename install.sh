@@ -5,7 +5,7 @@ DOTFILES=(
     '.aliases'
     '.bash_profile'
     '.bashrc'
-	'.bin'
+    '.bin'
     '.exports'
     '.functions'
     '.gitconfig'
