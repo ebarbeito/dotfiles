@@ -11,11 +11,13 @@
 	ui = auto
 	interactive = auto
 [alias]
+	ammend = !sh -c 'git add -A && git commit --amend'
 	changeset = !sh -c 'git diff --stat $1^..$1' -
 	coprev = !git checkout HEAD^
 	conext = !git checkout `git log --reverse --ancestry-path HEAD..master | head -n 1 | cut -d ' ' -f 2`
 	cohead = !git checkout `git log --branches -1 --pretty=format:'%D' |cut -d ',' -f 2`
 	coinit = !git checkout `git log --oneline|tail -n1 |cut -d ' ' -f 1`
+	ignored = !git status --ignored -s | grep '!!' | cut -d' ' -f2
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	top = shortlog -nsw -e
