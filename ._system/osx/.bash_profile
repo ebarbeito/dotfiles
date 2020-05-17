@@ -27,5 +27,10 @@ if type brew &>/dev/null; then
 fi
 
 # alias definitions
+if ls --color -d . >/dev/null 2>&1; then
+    alias ls='ls --color=auto'
+elif ls -G -d . >/dev/null 2>&1; then
+    alias ls='ls -G'
+fi
 alias brewup='brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 alias rmdss='find . -type f -name .DS_Store | xargs rm -rf'

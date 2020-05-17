@@ -10,13 +10,6 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # ls aliases
-if ls -F --color=auto >&/dev/null; then
-    alias ls='ls --color=auto'
-else
-    if ls -G >&/dev/null; then
-        alias ls='ls -G'
-    fi
-fi
 alias l='ls'
 alias la='ls -hla'
 alias ll='ls -hl'
