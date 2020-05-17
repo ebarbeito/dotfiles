@@ -15,14 +15,14 @@ if [ -d "$HOME/.bin" ]; then
    PATH="$HOME/.bin:$PATH"
 fi
 
-# export definitions
-if [ -f ~/.exports ]; then
-    . ~/.exports
-fi
-
 # alias definitions
 if [ -f ~/.aliases ]; then
     . ~/.aliases
+fi
+
+# export definitions
+if [ -f ~/.exports ]; then
+    . ~/.exports
 fi
 
 # function definitions
@@ -30,16 +30,9 @@ if [ -f ~/.functions ]; then
     . ~/.functions
 fi
 
-# system's extended profile
+# extended profile by system
 DOTFILES=$HOME/.dotfiles
-if [ "$(uname)" = "Darwin" ]; then
-	. $DOTFILES/._system/osx/.bash_profile
-elif [ "$(uname)" = "Linux" ]; then
-	. $DOTFILES/._system/linux/.bash_profile
+if [ -f $DOTFILES/._system/.profile ]; then
+	. $DOTFILES/._system/.profile
 fi
 unset DOTFILES
-
-# work specific
-#if [ -f ~/.bash_work ]; then
-#    . ~/.bash_work
-#fi
