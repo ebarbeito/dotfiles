@@ -18,11 +18,13 @@ alias lad='la | grep "^d"' # list directories
 alias lal='la | grep "^l"' # list links
 
 # more aliases
+alias aliases="alias | sed 's/=.*//'"
 alias cls='clear;ls'
 alias df='df -H'
 type colordiff >/dev/null 2>&1 && alias diff='colordiff'
-alias functions='declare -F | sed "s/^declare -f //"'
+alias functions='declare -f | grep "^[a-z].* ()" | sed "s/{$//"'
 alias killjobs='kill -9 $(jobs -p)'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias path='echo -e ${PATH//:/\\n}'
 alias rmgit='find . -type d -name .git | xargs rm -rf'
 alias rmsvn='find . -type d -name .svn | xargs rm -rf'

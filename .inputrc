@@ -1,3 +1,6 @@
 # Ctrl+R incremental search with UP-DOWN arrows
 "\C-[[A": history-search-backward
 "\C-[[B": history-search-forward
+
+# Flip through autocompletion matches with Shift-Tab.
+"\e[Z": menu-complete

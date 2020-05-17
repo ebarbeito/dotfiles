@@ -4,6 +4,9 @@
 # print file ignoring #-comments and blank lines
 catconf() { egrep -v '(^#|^\s*$|^\s*\t*#)' $1; }
 
+# show duplicated lines
+duplines() { sort $1 | uniq -d; }
+
 # mkdir and enter it immediately
 mkcd() { /bin/mkdir -p $1 && cd $1; }
 
@@ -24,6 +27,9 @@ t() { tail -f $1 | perl -pe "s/$2/\e[1;35;40m$&\e[0m/g"; }
 
 # decimal to binary
 tobin() { echo "obase=2; $1" | bc; }
+
+# show uniq lines
+uniqlines() { sort $1 | uniq -u; }
 
 # http response headers (-I with steroids)
 url_headers() { curl -sv "$@" 2>&1 >/dev/null | grep -v "^\*" | grep -v "^}" | cut -c3-; }
