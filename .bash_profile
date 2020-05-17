@@ -10,17 +10,10 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# path definitions
-#PATH=/opt/android-sdk-macosx/tools\
-#:/opt/android-sdk-macosx/platform-tools\
-#:$PATH
-#PATH="/bin:/sbin:/usr/bin:/usr/sbin"
-
 # extended PATH
-#PATH="/usr/local/sbin:$PATH"
-#if [ -d "$HOME/.bin" ]; then
-#    PATH="$HOME/.bin:$PATH"
-#fi
+if [ -d "$HOME/.bin" ]; then
+   PATH="$HOME/.bin:$PATH"
+fi
 
 # export definitions
 if [ -f ~/.exports ]; then
