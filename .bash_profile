@@ -29,10 +29,7 @@ fi
 
 # alias definitions
 if [ -f ~/.aliases ]; then
-	echo alias
     . ~/.aliases
-else
-    echo no-alias
 fi
 
 # function definitions
