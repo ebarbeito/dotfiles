@@ -10,29 +10,15 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# alias definitions
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-# export definitions
-if [ -f ~/.exports ]; then
-    . ~/.exports
-fi
-
-# function definitions
-if [ -f ~/.functions ]; then
-    . ~/.functions
-fi
-
-# path definitions
-if [ -f ~/.paths ]; then
-    . ~/.paths
-fi
+# load definitions
+for f in ~/.{aliases,exports,functions,paths}; do
+    [ -r "$f" ] && source "$f"
+done
+unset f
 
 # extended profile by system
 DOTFILES=$HOME/.dotfiles
-if [ -f $DOTFILES/._system/.profile ]; then
+if [ -r $DOTFILES/._system/.profile ]; then
 	. $DOTFILES/._system/.profile
 fi
 unset DOTFILES
