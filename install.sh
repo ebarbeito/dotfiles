@@ -12,6 +12,7 @@ DOTFILES=(
     '.gitignore_global'
     '.inputrc'
     '.nanorc'
+    '.paths'
     '.vimrc'
     '.wallpaper'
 )

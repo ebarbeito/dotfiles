@@ -10,11 +10,6 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# extended PATH
-if [ -d "$HOME/.bin" ]; then
-   PATH="$HOME/.bin:$PATH"
-fi
-
 # alias definitions
 if [ -f ~/.aliases ]; then
     . ~/.aliases
@@ -28,6 +23,11 @@ fi
 # function definitions
 if [ -f ~/.functions ]; then
     . ~/.functions
+fi
+
+# path definitions
+if [ -f ~/.paths ]; then
+    . ~/.paths
 fi
 
 # extended profile by system
