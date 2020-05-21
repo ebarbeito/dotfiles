@@ -2,5 +2,9 @@
 ._system/custom/*
 !._system/custom/.gitkeep
 .bin/.unused
+.irssi/irclogs
+!.irssi/irclogs/.gitkeep
+.irssi/scripts
+!.irssi/scripts/.gitkeep
 .wallpaper/*
 !.wallpaper/.gitkeep

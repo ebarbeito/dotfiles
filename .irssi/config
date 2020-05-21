@@ -1,0 +1,533 @@
+servers = (
+  { 
+    address = "irc.dal.net"; 
+    chatnet = "DALnet"; 
+    port = "6667";
+  },
+  {
+    address = "ssl.efnet.org";
+    chatnet = "EFNet";
+    port = "9999";
+    use_tls = "yes";
+  },
+  {
+    address = "irc.esper.net";
+    chatnet = "EsperNet";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "irc.gamesurge.net";
+    chatnet = "GameSurge";
+    port = "6667";
+  },
+  {
+    address = "libres.irc-hispano.org";
+    chatnet = "Hispano";
+    port = "443";
+    autoconnect = "no";
+  },
+  {
+    address = "eu.irc6.net";
+    chatnet = "IRCnet";
+    port = "6667";
+    use_tls = "yes";
+  },
+  {
+    address = "open.ircnet.net";
+    chatnet = "IRCnet";
+    port = "6667";
+  },
+  {
+    address = "irc.ircsource.net";
+    chatnet = "IRCSource";
+    port = "6667";
+  },
+  { 
+    address = "irc.link-net.org"; 
+    chatnet = "LinkNet"; 
+    port = "6667";
+  },
+  {
+    address = "irc.netfuze.net";
+    chatnet = "NetFuze";
+    port = "6667";
+  },
+  {
+    address = "irc.oftc.net";
+    chatnet = "OFTC";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  { 
+    address = "irc.linux.org"; 
+    chatnet = "OPN"; 
+    port = "6667";
+  },
+  { 
+    address = "upv.es.uninet.edu"; 
+    chatnet = "UniNet"; 
+    port = "6667";
+  },
+  { 
+    address = "irc.quakenet.org";
+    chatnet = "QuakeNet";
+    port = "6667";
+  },
+  {
+    address = "irc.rizon.net";
+    chatnet = "Rizon";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "silc.silcnet.org";
+    chatnet = "SILC";
+    port = "706";
+  },
+  { 
+    address = "irc.undernet.org";
+    chatnet = "Undernet";
+    port = "6667";
+  },
+  { 
+    address = "upv.es.uninet.edu"; 
+    chatnet = "UniNet"; 
+    port = "6667";
+  },
+  { 
+    address = "irc.webchat.org"; 
+    chatnet = "WebChat"; 
+    port = "6667";
+  }
+);
+
+chatnets = {
+  DALnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "20";
+    max_whois = "30";
+  };
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  EsperNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  Freenode = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  GameSurge = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  Hispano = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  IRCnet = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  IRCSource = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  LinkNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  NetFuze = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  OFTC = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  OPN = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  QuakeNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  Rizon = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  SILC = {
+    type = "SILC";
+  };
+  Undernet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  UniNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  WebChat = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+};
+
+channels = (
+  { name = "#archlinux-es"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#c-es"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#c++-es"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#gula"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#gentoo-es"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#osos"; chatnet = "Freenode"; autojoin = "no"; },
+  { name = "#archlinux"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#c"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#c++"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#gamedev"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#gentoo"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#linux_novatos"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#qt"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#php"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#sdl"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#secroot"; chatnet = "Hispano"; autojoin = "no"; },
+  { name = "#linux"; chatnet = "UniNet"; autojoin = "no"; },
+  { name = "#redes"; chatnet = "UniNet"; autojoin = "no"; }
+);
+
+aliases = {
+  ATAG = "WINDOW SERVER";
+  ADDALLCHANS = "SCRIPT EXEC foreach my \\$channel (Irssi::channels()) { Irssi::command(\"CHANNEL ADD -auto \\$channel->{name} \\$channel->{server}->{tag} \\$channel->{key}\")\\;}";
+  B = "BAN";
+  BACK = "AWAY";
+  BANS = "BAN";
+  BYE = "QUIT";
+  C = "CLEAR";
+  CALC = "EXEC - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  CHAT = "DCC CHAT";
+  DATE = "TIME";
+  DEHIGHLIGHT = "DEHILIGHT";
+  DESCRIBE = "ACTION";
+  DHL = "DEHILIGHT";
+  EXEMPTLIST = "MODE $C +e";
+  EXIT = "QUIT";
+  GOTO = "SCROLLBACK GOTO";
+  HIGHLIGHT = "HILIGHT";
+  HL = "HILIGHT";
+  HOST = "USERHOST";
+  INVITELIST = "MODE $C +I";
+  J = "JOIN";
+  K = "KICK";
+  KB = "KICKBAN";
+  KN = "KNOCKOUT";
+  LAST = "LASTLOG";
+  LEAVE = "PART";
+  M = "MSG";
+  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
+  MUB = "UNBAN *";
+  N = "NAMES";
+  NMSG = "^MSG";
+  P = "PART";
+  Q = "QUERY";
+  RESET = "SET -default";
+  RUN = "SCRIPT LOAD";
+  SAY = "MSG *";
+  SB = "SCROLLBACK";
+  SBAR = "STATUSBAR";
+  SIGNOFF = "QUIT";
+  SV = "MSG * Irssi $J ($V) - https://irssi.org";
+  T = "TOPIC";
+  UB = "UNBAN";
+  UMODE = "MODE $N";
+  UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"Irssi uptime: \"int(\\\\\\$1/3600/24)\"d \"int(\\\\\\$1/3600%24)\"h \"int(\\\\\\$1/60%60)\"m \"int(\\\\\\$1%60)\"s\" }'";
+  UNSET = "SET -clear";
+  W = "WHO";
+  WC = "WINDOW CLOSE";
+  WG = "WINDOW GOTO";
+  WJOIN = "JOIN -window";
+  WI = "WHOIS";
+  WII = "WHOIS $0 $0";
+  WL = "WINDOW LIST";
+  WN = "WINDOW NEW HIDDEN";
+  WQUERY = "QUERY -window";
+  WW = "WHOWAS";
+  ame = "foreach channel /me $*";
+  amsg = "foreach channel /say $*";
+  cow = "exec -o cowsay";
+  cowmini = "exec -o cowsay -f /usr/share/cows/small.cow";
+  figlet = "/exec -o figlet";
+  freenode = "connect +irc.freenode.net";
+};
+
+statusbar = {
+
+  items = {
+
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+
+    topic = " $topic";
+    topic_empty = " Irssi v$J - https://irssi.org";
+
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  default = {
+
+    window = {
+
+      disabled = "no";
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "active";
+
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    window_inact = {
+
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    prompt = {
+
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+    };
+
+    topic = {
+
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    override_coredump_limit = "no";
+    real_name = "neuronal";
+    user_name = "neuronal";
+    nick = "neuronal";
+    quit_message = "poweroff";
+    hostname = "";
+    resolve_prefer_ipv6 = "no";
+    use_proxy = "no";
+    proxy_address = "148.233.239.23:80";
+    proxy_port = "8080";
+  };
+  "irc/core" = {
+    usermode = "+iw";
+    alternate_nick = "neuronal_";
+    skip_motd = "yes";
+    channel_sync = "no";
+  };
+  "fe-text" = {
+    term_force_colors = "yes";
+    colors = "yes";
+    actlist_sort = "refnum";
+  };
+  "fe-common/core" = {
+    timestamps = "yes";
+    show_nickmode = "no";
+    show_nickmode_empty = "no";
+    completion_auto = "no";
+    completion_char = "\002,\002";
+    use_status_window = "yes";
+    print_active_channel = "no";
+    autolog = "yes";
+    autolog_path = "~/.irssi/irclogs/$tag/$0.log";
+    use_msgs_window = "no";
+  };
+  "perl/core/scripts" = {
+    url_verbose_grab = "no";
+    autoaway_timeout = "0";
+    xmms_info_pipe = "/tmp/xmms-info";
+    usercount_show_ircops = "no";
+    anotherway_timeout = "60000";
+    anotherway_reason = "Autoaway after 60 mins \002[\002zZzZ\002]\002";
+    mail_mailboxes = "1=/var/mail/neuronal,";
+    nact_devices = "eth0";
+  };
+  "irc/dcc" = { dcc_autoresume = "yes"; };
+};
+logs = { };
+hilights = ( { text = "neuronal"; nick = "yes"; word = "yes"; } );
+ignores = (
+  { mask = "agenda!*@*"; level = "ALL"; },
+  { mask = "noticias!*@*"; level = "ALL"; },
+  { mask = "global!*@*"; level = "ALL"; },
+  { mask = "shadow!^@^"; level = "ALL"; },
+  { mask = "info!*@*"; level = "ALL"; },
+  { mask = "charlas!*@*"; level = "ALL"; },
+  { mask = "nick2info!*@*"; level = "ALL"; },
+  { mask = "ipchula*!*"; level = "ALL"; },
+  { mask = "*!*@noticias.irc-hispano.org"; level = "ALL"; },
+  { mask = "smsmaster!*@*"; level = "ALL"; },
+  { mask = "aspirante!*@*"; level = "ALL"; },
+  { mask = "ipswapas!*@*"; level = "ALL"; },
+  { mask = "*!*@CX8VMN.C3Qbw9.virtual"; level = "ALL"; },
+  { mask = "msf"; level = "ALL"; },
+  { mask = "avisa"; level = "ALL"; },
+  { mask = "chat13tv"; level = "ALL"; },
+  { mask = "aviso"; level = "ALL"; },
+  { mask = "aimc!*@*"; level = "ALL"; },
+  { mask = "coca^cola!*@*"; level = "ALL"; },
+  { mask = "cocacola"; level = "ALL"; },
+  { mask = "PanXafrica"; level = "ALL"; },
+  { mask = "pan_x_africa"; level = "ALL"; },
+  { mask = "NetTotal!*@*"; level = "ALL"; },
+  { mask = "coca__cola!*@*"; level = "ALL"; },
+  { mask = "coca-_-cola!*@*"; level = "ALL"; },
+  { mask = "MS_Office!*@*"; level = "ALL"; },
+  { mask = "E250V"; level = "ALL"; },
+  { mask = "samsung"; level = "ALL"; },
+  { mask = "JMadrazoDSXXI"; level = "ALL"; },
+  { mask = "BasabeDSXXI"; level = "ALL"; }
+);
+notifies = {
+  "Annubis!*@*" = { };
+  "Asejua!*@*" = { };
+  "Crashita!*@*" = { };
+  "DaMNaTiOn!*@*" = { };
+  "NoM4k!*@*" = { };
+  "ReK2!*@*" = { };
+  "Reggy!*@*" = { };
+  "Rek2wilds!*@*" = { };
+  "Syslogd!*@*" = { };
+  "ThorN!*@*" = { };
+  "Tifon!*@*" = { };
+  "Zhodiac!*@*" = { };
+  "[CRASH]" = { };
+  "[CRASH]]" = { };
+  "aViNash!*@*" = { };
+  "ayelen!*@*" = { };
+  "chui!*@*" = { };
+  "dj-klined!*@*" = { };
+  "ikepa!*@*" = { };
+  "itzhak!*@*" = { };
+  "kirai!*@*" = { };
+  "klonical!*@*" = { };
+  "konjic!*@*" = { };
+  "konjic2!*@*" = { };
+  "la-diosa!*@*" = { };
+  "la\\diosa!*@*" = { };
+  "linuxman!*@*" = { };
+  "nanika!*@*" = { };
+  "neltwo!*@*" = { };
+  "pcm!*@*" = { };
+  "pixmap!*@*" = { };
+  "sepis!*@*" = { };
+  "trukulo!*@*" = { };
+  "trulux!*@*" = { };
+  "wallops!*@*" = { };
+  "|CoDeX|!*@*" = { };
+  "|T0RM|!*@*" = { };
+  "|taz|" = { };
+};
+keyboard = (
+  { key = "^L"; id = "command"; data = "clear "; },
+  { key = "^[[12~"; id = "command"; data = "chops "; },
+  { key = "^[[13~"; id = "command"; data = "nops "; },
+  { key = "meta-backspace"; id = "delete_previous_word"; data = ""; },
+  { key = "^[[11~"; id = "command"; data = "ame , buenas"; },
+  { key = "^[[14~"; id = "command"; data = "freenode "; }
+);
