@@ -6,6 +6,6 @@ EXCLUDED=${DIR}/.dotignore
 for path in "$DIR"/*; do
     filename=$(basename ${path})
     grep -Fxq "$filename" ${EXCLUDED} && continue
-    [[ -r "$HOME/$filename" ]] && continue
+    [ -r "$HOME/$filename" ] && continue
     ln -sv ${path} $HOME
 done
