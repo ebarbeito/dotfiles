@@ -1,24 +1,11 @@
 #!/bin/sh
+shopt -s dotglob
+DIR=$(dirname $0)
+EXCLUDED=${DIR}/.dotignore
 
-DIR=$(dirname "$0")
-DOTFILES=(
-    '.aliases'
-    '.bash_profile'
-    '.bashrc'
-    '.bin'
-    '.exports'
-    '.functions'
-    '.gitconfig'
-    '.gitignore_global'
-    '.inputrc'
-    '.nanorc'
-    '.paths'
-    '.vimrc'
-    '.wallpaper'
-)
-# DO_NOT_LINK( ._system .gitignore install.sh README.md )
-
-for dotfile in "${DOTFILES[@]}"; do
-    ln -sv "${DIR}/${dotfile}" ~
-#    rm ${dotfile}
+for path in "$DIR"/*; do
+    filename=$(basename ${path})
+    grep -Fxq "$filename" ${EXCLUDED} && continue
+    [[ -r "$HOME/$filename" ]] && continue
+    ln -sv ${path} $HOME
 done

@@ -1,0 +1,6 @@
+._system
+.dotignore
+.git
+.gitignore
+install.sh
+README.md
