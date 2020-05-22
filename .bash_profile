@@ -1,3 +1,5 @@
+DOTFILES=$HOME/.dotfiles
+
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -10,15 +12,14 @@ shopt -s histappend
 # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# load definitions
-for f in ~/.{aliases,exports,functions,paths,prompt}; do
+# load shell definitions
+for f in $DOTFILES/.shell.d/.{aliases,exports,functions,paths,prompt}; do
     [ -r "$f" ] && source "$f"
-done
-unset f
+done; unset f
 
 # extended profile by system
-DOTFILES=$HOME/.dotfiles
 if [ -r $DOTFILES/._system/.profile ]; then
 	. $DOTFILES/._system/.profile
 fi
+
 unset DOTFILES
