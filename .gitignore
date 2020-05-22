@@ -6,5 +6,8 @@
 !.irssi/irclogs/.gitkeep
 .irssi/scripts
 !.irssi/scripts/.gitkeep
+.ssh/*
+!.ssh/config
+!.ssh/config.d/.gitkeep
 .wallpaper/*
 !.wallpaper/.gitkeep
