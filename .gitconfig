@@ -4,22 +4,41 @@
 [credential]
 	helper = osxkeychain
 [core]
+	editor = vim
 	excludesfile = ~/.gitignore_global
 	ignorecase = false
-	editor = vim
+	pager = less -R
 [color]
 	ui = auto
 	interactive = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [alias]
-	ammend = !sh -c 'git add -A && git commit --amend'
+	br = branch
+	co = checkout
+	ci = commit
+	df = diff
+	st = status
+	up = pull --rebase
+	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	changeset = !sh -c 'git diff --stat $1^..$1' -
 	coprev = !git checkout HEAD^
 	conext = !git checkout `git log --reverse --ancestry-path HEAD..master | head -n 1 | cut -d ' ' -f 2`
 	cohead = !git checkout `git log --branches -1 --pretty=format:'%D' |cut -d ',' -f 2`
 	coinit = !git checkout `git log --oneline|tail -n1 |cut -d ' ' -f 1`
 	ignored = !git status --ignored -s | grep '!!' | cut -d' ' -f2
+	last = log --abbrev-commit -1 HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	tags = tag -l
 	top = shortlog -nsw -e
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD --
 	vommit = commit
