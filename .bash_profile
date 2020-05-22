@@ -11,7 +11,7 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # load definitions
-for f in ~/.{aliases,exports,functions,paths}; do
+for f in ~/.{aliases,exports,functions,paths,prompt}; do
     [ -r "$f" ] && source "$f"
 done
 unset f
