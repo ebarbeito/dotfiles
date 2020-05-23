@@ -1,20 +1,23 @@
-# US English and UTF-8
-export LANG='en_US.UTF-8';
-export LC_ALL='en_US.UTF-8';
+# add color to the terminal output
+export CLICOLOR=1
+#export LSCOLORS='GxFxCxDxBxegedabagaced'
 
 # vim as the default editor
-export EDITOR=vim
+export EDITOR='vim'
 
-# don't put duplicate lines or lines starting with space in the history.
-export HISTCONTROL=ignoreboth
+# grep with color (violet)
+export GREP_COLOR='1;35;40'
+
+# don't put duplicate lines or lines starting with space in the history
+export HISTCONTROL='ignoreboth'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=1000
 export HISTFILESIZE=2000
 
-# add color to the terminal output
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# US English and UTF-8
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
-# grep with color (violet)
-export GREP_COLOR='1;35;40'
+# don’t clear the screen after quitting a manual page
+export MANPAGER='less -X'

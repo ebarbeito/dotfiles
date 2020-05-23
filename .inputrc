@@ -4,3 +4,12 @@
 
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
+
+# display colors when doing completion as `ls` does
+set colored-stats on
+
+# do not duplicate characters after the cursor on a completion (readline, bash 4)
+set skip-completed-text on
+
+# append indicator (one of */=>@|) to entries, like `ls -F` does
+set visible-stats on
