@@ -1,0 +1,11 @@
+# turn off the welcome message
+startup_message off
+
+# run screen in UTF-8 mode (screen -U)
+defutf8 on
+
+# set the scrollback buffer
+defscrollback 16000
+
+# set the escape key to Ctrl+j
+escape ^Jj
