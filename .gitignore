@@ -2,6 +2,8 @@
 ._system/custom/*
 !._system/custom/.gitkeep
 .bin/.unused
+.config/*
+!.config/alacritty
 .irssi/irclogs
 !.irssi/irclogs/.gitkeep
 .irssi/scripts
