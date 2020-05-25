@@ -8,12 +8,20 @@ export EDITOR='vim'
 # grep with color (violet)
 export GREP_COLOR='1;35;40'
 
-# don't put duplicate lines or lines starting with space in the history
-export HISTCONTROL='ignoreboth'
+# history: don't duplicate lines, nor lines starting with space
+export HISTCONTROL='ignoreboth:erasedups'
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=1000
-export HISTFILESIZE=2000
+# history: be explicit about file path
+export HISTFILE=~/.bash_history
+
+# history: in memory history size
+export HISTSIZE=8000
+
+# history: on disk history size
+export HISTFILESIZE=8000
+
+# history: display the timestamp along with the command
+export HISTTIMEFORMAT='%F %T '
 
 # US English and UTF-8
 export LANG='en_US.UTF-8'
