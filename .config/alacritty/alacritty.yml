@@ -81,10 +81,10 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 64000
 
   # Scrolling distance multiplier.
-  #multiplier: 3
+  multiplier: 2
 
 # Font configuration
 font:
@@ -157,7 +157,7 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Hyper)
 colors:
@@ -217,25 +217,25 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-#visual_bell:
-#  animation: EaseOutExpo
-#  duration: 0
-#  color: '#ffffff'
+visual_bell:
+ animation: EaseOutExpo
+ duration: 1
+ color: '#000000'
 
 # Background opacity
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.8
 
-#selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+dynamic_title: true
 
 cursor:
   # Cursor style
@@ -263,7 +263,7 @@ cursor:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
@@ -274,10 +274,14 @@ cursor:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /usr/local/bin/tmux
+  args:
+    - -u
+    - new
+    - -A
+    - -s
+    - main
 
 # Startup directory
 #
@@ -354,8 +358,8 @@ cursor:
 # And optionally:
 #
 # - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Middle, action: PasteSelection }
+mouse_bindings:
+ - { mouse: Middle, action: PasteSelection }
 
 # Key bindings
 #
@@ -491,7 +495,18 @@ cursor:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
-#key_bindings:
+key_bindings:
+  # macOS keyboards with "Spanish - ISO" layout
+  - { key: 10,        mods: Alt,    chars: "\x5c" } # `\`
+  - { key: 18,        mods: Alt,    chars: "\x7c" } # `|`
+  - { key: Key2,      mods: Alt,    chars: "@" }
+  - { key: Key3,      mods: Alt,    chars: "#" }
+  - { key: Key6,      mods: Alt,    chars: "¬" }
+  - { key: 39,        mods: Alt,    chars: "{" }
+  - { key: 42,        mods: Alt,    chars: "}" }
+  - { key: 33,        mods: Alt,    chars: "[" }
+  - { key: 30,        mods: Alt,    chars: "]" }
+
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
