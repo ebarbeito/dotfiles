@@ -39,3 +39,9 @@ weather() { curl -4 wttr.in/${1:-Alicante,+Spain}; }
 
 # fast simple http server
 webserver() { python -m SimpleHTTPServer $1; }
+
+# youtube: download entry as mp3 high quality
+yt2mp3() { youtube-dl --ignore-config -i --extract-audio --audio-format mp3 --audio-quality 0 $1; }
+
+# youtube: download playlist as mp3
+yt2mp3s() { youtube-dl --ignore-config --download-archive _downloaded.txt --no-overwrites -ic --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0 $1; }
