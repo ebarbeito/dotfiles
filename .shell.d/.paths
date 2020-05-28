@@ -1,3 +1,8 @@
+# ruby gems locally installed
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 # extended PATH
 if [ -d "$HOME/.bin" ]; then
    PATH="$HOME/.bin:$PATH"
