@@ -1,25 +1,27 @@
-[user]
-	name = Enrique Barbeito García
-	email = ebarbeito@gmail.com
-[credential]
-	helper = osxkeychain
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
 	ignorecase = false
 	pager = less -R
+
 [color]
 	ui = auto
 	interactive = auto
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
+[gpg]
+	program = gpg
+
 [alias]
 	br = branch
 	co = checkout
@@ -42,3 +44,7 @@
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	unstage = reset HEAD --
 	vommit = commit
+
+# include additional custom configuration
+[include]
+	path = ~/.dotfiles/._system/custom/.gitconfig

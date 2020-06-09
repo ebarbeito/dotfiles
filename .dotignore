@@ -1,6 +1,7 @@
 ._system
 .dotignore
 .git
+.gitconfig.custom
 .gitignore
 install.sh
 README.md

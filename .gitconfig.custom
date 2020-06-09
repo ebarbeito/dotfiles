@@ -1,0 +1,9 @@
+# Custom config sample file
+#
+# Use it: `catconf .gitconfig.custom > ._system/custom/.gitconfig`
+
+[user]
+	name = Enrique Barbeito García
+	email = ebarbeito@gmail.com
+[credential]
+	helper = osxkeychain
