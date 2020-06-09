@@ -108,7 +108,6 @@ cask "itsycal"
 cask "java"
 cask "joinme"
 cask "keka"
-cask "keybase"
 cask "kindle"
 cask "lastfm"
 cask "libreoffice"
@@ -128,7 +127,6 @@ cask "qlstephen"
 cask "qlvideo"
 cask "quicklook-csv"
 cask "quicklook-json"
-cask "recordit"
 cask "rectangle"
 cask "rescuetime"
 cask "skype"
@@ -152,4 +150,10 @@ cask "vox"
 cask "webpquicklook"
 cask "xquartz"
 cask "zoomus"
+
+# include an additional custom Brewfile
+filepath = File.expand_path("~/.dotfiles/._system/custom/.brewfile")
+if File.exists?(filepath)
+  instance_eval(File.read(filepath))
+end
 
