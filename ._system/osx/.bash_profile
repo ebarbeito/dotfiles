@@ -17,6 +17,7 @@ fi
 # see /etc/paths, /etc/paths.d
 PATH=/opt/android-sdk-macosx/tools\
 :/opt/android-sdk-macosx/platform-tools\
+:/usr/local/opt/mysql-client/bin\
 :$PATH; export PATH
 
 # Command-line tools replacements
