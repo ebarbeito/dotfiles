@@ -21,7 +21,7 @@ export HISTSIZE=8000
 export HISTFILESIZE=8000
 
 # history: display the timestamp along with the command
-export HISTTIMEFORMAT='%F %T '
+#export HISTTIMEFORMAT='%F %T '
 
 # US English and UTF-8
 export LANG='en_US.UTF-8'
