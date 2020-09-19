@@ -5,3 +5,4 @@
 .gitignore
 install.sh
 README.md
+uninstall.sh
