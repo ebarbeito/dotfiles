@@ -1,9 +1,13 @@
-if [ -r /usr/local/bin/git-prompt.sh ]; then
-	source /usr/local/bin/git-prompt.sh
+if [ -r "$HOME/.bin/git-prompt.sh" ]; then
+	. "$HOME/.bin/git-prompt.sh"
 
 	GIT_PS1_SHOWDIRTYSTATE=1
 	GIT_PS1_SHOWSTASHSTATE=1
 	GIT_PS1_SHOWUNTRACKEDFILES=1
+else
+	__git_ps1 () {
+		return
+	}
 fi
 
 export PS1="\n\[\e[0m\]\342\224\214(j:\[\e[1;32m\]\j\[\e[0m\], e:\[\e[1;32m\]\$?\[\e[0m\])\[\033[0m\]\$(__git_ps1 ' %s')\n\[\e[0m\]\342\224\224 \[\e[1;32m\]\w\[\e[0m\] $ \[\e[0m\]"
