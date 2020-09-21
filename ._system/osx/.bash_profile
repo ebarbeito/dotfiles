@@ -34,7 +34,7 @@ if ls --color -d . >/dev/null 2>&1; then
 elif ls -G -d . >/dev/null 2>&1; then
     alias ls='ls -G'
 fi
-alias brewup='brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
+alias brewup='brew update && brew upgrade && brew upgrade --cask && brew cleanup && brew doctor'
 alias cask='brew cask'
 alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias myip_lan='ipconfig getifaddr en0'
