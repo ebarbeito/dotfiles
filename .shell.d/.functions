@@ -40,6 +40,26 @@ weather() { curl -4 wttr.in/${1:-Alicante,+Spain}; }
 # fast simple http server
 webserver() { python -m SimpleHTTPServer $1; }
 
+
+# docker: select docker container[s] to remove
+drc() { docker ps -a | sed 1d | fzf -m -1 -q "$1" | awk '{print $1}' | xargs docker rm; }
+
+# docker: select docker container[s] to remove (and associated volumes)
+drcv() { docker ps -a | sed 1d | fzf -m -1 -q "$1" | awk '{print $1}' | xargs docker rm -v; }
+
+# docker: select docker image[s] to remove
+dri() { docker images | sed 1d | fzf -m -1 -q "$1" | awk '{print $3}' | xargs docker rmi; }
+
+# docker: select docker volume[s] to remove
+drv() { docker volume ls | sed 1d| fzf -m -1 -q "$1" | awk '{print $2}' | xargs docker volume rm; }
+
+# docker: select docker container[s] to stop
+dsc() { docker ps -a | sed 1d | fzf -m -1 -q "$1" | awk '{print $1}' | xargs docker stop; }
+
+# docker: select running docker container to get an interactive tty
+dshc() { local c=$(docker ps | sed 1d | fzf -1 -q "$1" | awk '{print $1}'); docker exec -it $c sh; }
+
+
 # youtube: download entry as mp3 high quality
 yt2mp3() { youtube-dl --ignore-config -i --extract-audio --audio-format mp3 --audio-quality 0 $1; }
 
