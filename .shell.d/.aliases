@@ -17,6 +17,9 @@ alias laf='la | grep "^-"' # only files
 alias lad='la | grep "^d"' # list directories
 alias lal='la | grep "^l"' # list links
 
+# docker aliases
+alias docker-nuke='docker system prune -f --all --volumes'
+
 # more aliases
 alias aliases="alias | sed 's/=.*//'"
 alias cls='clear;ls'
