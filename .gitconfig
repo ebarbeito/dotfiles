@@ -4,6 +4,9 @@
 	ignorecase = false
 	pager = less -R
 
+[pull]
+    rebase = false
+
 [color]
 	ui = auto
 	interactive = auto
