@@ -30,7 +30,7 @@
 	co = checkout
 	ci = commit
 	df = diff
-	st = status
+	st = status --branch --short --untracked-files=normal
 	up = pull --rebase
 	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	changeset = !sh -c 'git diff --stat $1^..$1' -
