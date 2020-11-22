@@ -34,6 +34,7 @@
 	up = pull --rebase
 	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	changeset = !sh -c 'git diff --stat $1^..$1' -
+	churn = "!f() { git log --format=format: --name-only --since=${1:-12.month} | egrep -v \"^$\" | sort | uniq -c | sort -nr | head -${2:-50}; }; f"
 	coprev = !git checkout HEAD^
 	conext = !git checkout `git log --reverse --ancestry-path HEAD..master | head -n 1 | cut -d ' ' -f 2`
 	cohead = !git checkout `git log --branches -1 --pretty=format:'%D' |cut -d ',' -f 2`
