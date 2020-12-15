@@ -152,7 +152,7 @@ cask "vlc"
 cask "vox"
 cask "webpquicklook"
 cask "xquartz"
-cask "zoomus"
+cask "zoom"
 
 # include an additional custom Brewfile
 filepath = File.expand_path("~/.dotfiles/._system/custom/.brewfile")
