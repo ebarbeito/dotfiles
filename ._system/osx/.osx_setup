@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Change DNS resolvers in wifi network service
+networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
+
+echo $'Apply all software updates\n'
+sudo softwareupdate -ia
+
+echo $'Install Xcode command-line tools\n'
+xcode-select --install
+
+echo $'Install Homebrew\n'
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"' >> ~/.bash_profile
+brew tap buo/cask-upgrade
+
+brew bundle install
+
+echo $(brew --prefix)/bin/bash | sudo tee --append /etc/shells
+chsh -s $(brew --prefix)/bin/bash
