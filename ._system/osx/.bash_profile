@@ -38,5 +38,6 @@ alias brewup='brew update && brew upgrade && brew upgrade --cask --greedy && bre
 alias cask='brew cask'
 alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias myip_lan='ipconfig getifaddr en0'
+alias o.='open .'
 alias ping='/sbin/ping'
 alias rmdss='find . -type f -name .DS_Store -exec rm -f {} \;'
