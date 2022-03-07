@@ -7,6 +7,9 @@
 [pull]
     rebase = false
 
+#[push]
+#    default = current
+
 [color]
 	ui = auto
 	interactive = auto
