@@ -548,4 +548,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# https://www.gitignore.io
+# Personal sidenotes
+scratch.md
+

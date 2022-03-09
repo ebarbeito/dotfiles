@@ -16,6 +16,9 @@ mostused() { history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c
 # find pid numbers easily. pidof override
 #pidof() { ps aux | grep $1 | awk '{print $2}' |head -n -1; }
 
+# jot down some notes
+scratch() { local f=${1:-$TMPDIR}/scratch.md; $EDITOR "${f}"; }
+
 # sprunge: command line pastebin
 sprunge() { curl -sF 'sprunge=<-' 'http://sprunge.us' < "${1:-/dev/stdin}"; }
 
