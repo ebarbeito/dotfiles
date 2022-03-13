@@ -5,6 +5,7 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 # brew
 if type brew &>/dev/null; then
     export HOMEBREW_BUNDLE_FILE="$(dirname ${BASH_SOURCE[0]})/.brewfile"
+    export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
 fi
 
@@ -27,6 +28,7 @@ if type brew &>/dev/null; then
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
 fi
+PATH=/usr/local/opt/curl/bin:$PATH; export PATH
 
 # alias definitions
 if ls --color -d . >/dev/null 2>&1; then
