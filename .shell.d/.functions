@@ -7,6 +7,9 @@ catconf() { egrep -v '(^#|^\s*$|^\s*\t*#)' $1; }
 # show duplicated lines
 duplines() { sort $1 | uniq -d; }
 
+# ix: command line pastebin
+ix() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
+
 # mkdir and enter it immediately
 mkcd() { /bin/mkdir -p $1 && cd $1; }
 
@@ -18,9 +21,6 @@ mostused() { history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c
 
 # jot down some notes
 scratch() { local f=${1:-$HOME}/.scratch.md; $EDITOR "${f}"; }
-
-# sprunge: command line pastebin
-sprunge() { curl -sF 'sprunge=<-' 'http://sprunge.us' < "${1:-/dev/stdin}"; }
 
 # tail -f with search highlight
 t() { tail -f $1 | perl -pe "s/$2/\e[1;35;40m$&\e[0m/g"; }
