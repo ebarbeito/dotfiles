@@ -98,6 +98,7 @@ brew "youtube-dl"
 
 cask "alacritty"
 cask "android-file-transfer"
+cask "anki"
 cask "balenaetcher"
 cask "brave-browser"
 cask "deepl"
