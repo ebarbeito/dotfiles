@@ -549,5 +549,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # Personal sidenotes
-scratch.md
+.scratch.md
 
