@@ -27,6 +27,7 @@ alias df='df -H'
 type colordiff >/dev/null 2>&1 && alias diff='colordiff'
 alias functions='declare -f | grep "^[a-z].* ()" | sed "s/{$//"'
 alias killjobs='kill -9 $(jobs -p)'
+alias mount='mount | column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias p.='(pstorm $PWD &>/dev/null &)'
 alias path='echo -e ${PATH//:/\\n}'
@@ -41,3 +42,12 @@ alias trim="sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g'"
 alias vi='vim'
 alias wcr='wc `find . -type f`'
 alias wget='wget -c'
+
+# if user is not root, pass all commands via sudo #
+if [ $UID -ne 0 ]; then
+    alias halt='sudo /sbin/halt'
+    alias poweroff='sudo /sbin/poweroff'
+    alias reboot='sudo /sbin/reboot'
+    alias shutdown='sudo /sbin/shutdown'
+fi
+
