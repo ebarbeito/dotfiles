@@ -25,6 +25,9 @@ fi
 
 brew update && brew bundle install && brew cleanup
 
+[ ! -e "${HOME}/.brew-aliases" ] \
+    && ln -s "$(dirname $(readlink -f "${0}"))/.brew-aliases" ~
+
 # Set default shell
 echo $(brew --prefix)/bin/bash | sudo tee --append /etc/shells
 chsh -s $(brew --prefix)/bin/bash
