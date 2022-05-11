@@ -23,13 +23,16 @@ PATH=/opt/android-sdk-macosx/tools\
 :$PATH; export PATH
 
 # Command-line tools replacements
+# $(brew --prefix)/opt/gnu-getopt/bin
 if type brew &>/dev/null; then
     HOMEBREW_PREFIX=$(brew --prefix)
     # gnubin; gnuman
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
 fi
-PATH=/usr/local/opt/curl/bin:$PATH; export PATH
+PATH=/usr/local/opt/curl/bin\
+:/usr/local/opt/gnu-getopt/bin\
+:$PATH; export PATH
 
 # alias definitions
 if ls --color -d . >/dev/null 2>&1; then
