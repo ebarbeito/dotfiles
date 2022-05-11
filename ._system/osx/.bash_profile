@@ -7,6 +7,7 @@ if type brew &>/dev/null; then
     export HOMEBREW_BUNDLE_FILE="$(dirname ${BASH_SOURCE[0]})/.brewfile"
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
+    export HOMEBREW_NO_AUTO_UPDATE=true
 fi
 
 # java
