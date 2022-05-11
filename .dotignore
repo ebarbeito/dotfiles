@@ -1,5 +1,6 @@
 ._system
 .dotignore
+.editorconfig
 .git
 .gitignore
 install.sh
