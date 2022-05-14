@@ -5,6 +5,9 @@
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
 
+# readline never rings the bell
+set bell-style none
+
 # display colors when doing completion as `ls` does
 set colored-stats on
 
@@ -16,3 +19,7 @@ set visible-stats on
 
 # performs filename matching and completion in a case-insensitive fashion
 set completion-ignore-case on
+
+# pasted text is bracketed with control sequences ESC [ 200 ~ and ESC [ 201 ~
+set enable-bracketed-paste on
+
