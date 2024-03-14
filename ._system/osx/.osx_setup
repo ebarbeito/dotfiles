@@ -20,10 +20,13 @@ xcode-select --install
 if test ! $(which brew); then
   echo $'Install Homebrew\n'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
   brew tap buo/cask-upgrade
 fi
 
-brew update && brew bundle install && brew cleanup
+brew update \
+  && brew bundle install --file .brewfile \
+  && brew cleanup
 
 [ ! -e "${HOME}/.brew-aliases" ] \
     && ln -s "$(dirname $(readlink -f "${0}"))/.brew-aliases" ~

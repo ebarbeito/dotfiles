@@ -1,14 +1,16 @@
-# bash completion in mac
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
 # brew
+[ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
     export HOMEBREW_BUNDLE_FILE="$(dirname ${BASH_SOURCE[0]})/.brewfile"
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
     export HOMEBREW_NO_AUTO_UPDATE=true
 fi
+
+# bash completion in mac
+export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
+[[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]] && . "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
 
 # java
 if type /usr/libexec/java_home &>/dev/null; then
@@ -19,7 +21,8 @@ fi
 # see /etc/paths, /etc/paths.d
 PATH=/opt/android-sdk-macosx/tools\
 :/opt/android-sdk-macosx/platform-tools\
-:/usr/local/opt/mysql-client/bin\
+:$HOMEBREW_PREFIX/opt/mysql-client/bin\
+:/Applications/PhpStorm.app/Contents/MacOS\
 :$PATH; export PATH
 
 # Command-line tools replacements
@@ -30,9 +33,12 @@ if type brew &>/dev/null; then
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
     for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
 fi
-PATH=/usr/local/opt/curl/bin\
-:/usr/local/opt/gnu-getopt/bin\
+PATH=$HOMEBREW_PREFIX/opt/curl/bin\
+:$HOMEBREW_PREFIX/opt/gnu-getopt/bin\
 :$PATH; export PATH
+MANPATH=$HOMEBREW_PREFIX/opt/curl/share/man\
+:$HOMEBREW_PREFIX/opt/gnu-getopt/share/man\
+:$MANPATH; export MANPATH
 
 # alias definitions
 if ls --color -d . >/dev/null 2>&1; then
