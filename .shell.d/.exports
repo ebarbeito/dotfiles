@@ -6,7 +6,7 @@ export CLICOLOR=1
 export EDITOR='vim'
 
 # grep with color (violet)
-export GREP_COLOR='1;35;40'
+export GREP_COLOR='mt=1;35;40'
 
 # history: don't duplicate lines, nor lines starting with space
 export HISTCONTROL='ignoreboth:erasedups'
