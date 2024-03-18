@@ -1,3 +1,7 @@
+# base64 print decode/encode
+base64_decode() { echo "$1" | base64 -d; }
+base64_encode() { echo -n "$1" | base64 -w0; }
+
 # simple calcs
 #calc() { awk "BEGIN{ print $* }"; }
 

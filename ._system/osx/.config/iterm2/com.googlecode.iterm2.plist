@@ -357,7 +357,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>7D4D8F0B-8458-41B7-8A53-C916004D3C50</string>
+	<string>FF67AFEF-EB7E-4B4A-A2F8-85AD19226DD1</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -1287,7 +1287,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tmux -CC new -A -s main</string>
+			<string>#tmux -CC new -A -s main</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
