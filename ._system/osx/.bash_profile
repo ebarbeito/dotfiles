@@ -15,6 +15,7 @@ export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
 # java
 if type /usr/libexec/java_home &>/dev/null; then
     export JAVA_HOME=$(/usr/libexec/java_home)
+    export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # extended path defined by /usr/libexec/path_helper -s
