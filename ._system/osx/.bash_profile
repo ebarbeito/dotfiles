@@ -44,7 +44,8 @@ if ls --color -d . >/dev/null 2>&1; then
 elif ls -G -d . >/dev/null 2>&1; then
     alias ls='ls -G'
 fi
-alias brewup='brew update && brew upgrade && brew upgrade --cask --greedy && brew cleanup -s && rm -rf "$(brew --cache)" && brew doctor'
+alias brewup='brew update && brew upgrade && brew cu --all --yes --cleanup && brew bundle install && brew bundle cleanup -f && brew cleanup -s && rm -rf "$(brew --cache)" && brew doctor'
+
 alias cask='brew cask'
 alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias htop='sudo htop'
@@ -52,3 +53,4 @@ alias myip_lan='ipconfig getifaddr en0'
 alias o.='open .'
 alias ping='/sbin/ping'
 alias rmdss='find . -type f -name .DS_Store -exec rm -f {} \;'
+alias nameservers="scutil --dns | grep 'nameserver\[[0-9]*\]' | sort | uniq | trim"
