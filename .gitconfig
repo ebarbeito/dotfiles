@@ -25,9 +25,6 @@
 	old = red bold
 	new = green bold
 
-[gpg]
-	program = gpg
-
 [alias]
 	br = branch
 	co = checkout
@@ -53,6 +50,6 @@
 	vommit = commit
 	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 
-# include additional custom configuration
+# include additional custom configuration for git users and/or organizations
 [include]
 	path = ~/.dotfiles/._system/custom/.gitconfig
