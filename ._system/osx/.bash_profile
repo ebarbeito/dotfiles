@@ -18,6 +18,13 @@ if type /usr/libexec/java_home &>/dev/null; then
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+# go
+if type go &>/dev/null; then
+    export GOROOT="$(brew --prefix golang)/libexec"
+    export GOPATH=$HOME/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+fi
+
 # extended path defined by /usr/libexec/path_helper -s
 # see /etc/paths, /etc/paths.d
 PATH=/opt/android-sdk-macosx/tools\
