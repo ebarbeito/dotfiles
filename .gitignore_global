@@ -551,3 +551,6 @@ $RECYCLE.BIN/
 # Personal sidenotes
 .scratch.md
 
+# rsync excluded from
+.rsyncignore
+
