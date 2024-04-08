@@ -27,6 +27,7 @@
 
 [alias]
 	br = branch
+	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	co = checkout
 	ci = commit
 	df = diff
@@ -43,6 +44,8 @@
 	last = log --abbrev-commit -1 HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	remotes = remote -v
+	go = "!f() { git switch -c \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
 	tags = tag -l
 	top = shortlog -nsw -e
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
