@@ -3,6 +3,10 @@ DOTFILES=$HOME/.dotfiles
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+umask 022
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -26,3 +30,4 @@ if [ -r $DOTFILES/._system/.profile ]; then
 fi
 
 unset DOTFILES
+
