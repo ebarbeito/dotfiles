@@ -4,11 +4,14 @@
 	ignorecase = false
 	pager = less -R
 
+[init]
+	defaultBranch = main
+
 [pull]
     rebase = false
 
-#[push]
-#    default = current
+[push]
+    default = current
 
 [color]
 	ui = auto
@@ -26,7 +29,7 @@
 	new = green bold
 
 [alias]
-	br = branch
+	br = branch -v
 	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	co = checkout
 	ci = commit
