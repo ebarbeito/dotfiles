@@ -14,6 +14,9 @@ duplines() { sort $1 | uniq -d; }
 # ix: command line pastebin
 ix() { curl -F 'f:1=<-' ix.io < "${1:-/dev/stdin}"; }
 
+# decode JWT token
+jwt_decode() { jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<<"${1}"; }
+
 # mkdir and enter it immediately
 mkcd() { /bin/mkdir -p $1 && cd $1; }
 
