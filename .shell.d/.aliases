@@ -36,6 +36,7 @@ alias cls='clear;ls'
 alias df='df -H'
 type colordiff >/dev/null 2>&1 && alias diff='colordiff'
 alias functions='declare -f | grep "^[a-z].* ()" | sed "s/{$//"'
+alias h="history"
 alias killjobs='kill -9 $(jobs -p)'
 alias mount='mount | column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -45,6 +46,7 @@ alias please='sudo "$BASH" -c "$(history -p !!)"'
 alias rmgit='find . -type d -name .git | xargs rm -rf'
 alias rmsvn='find . -type d -name .svn | xargs rm -rf'
 alias sockets='lsof -i'
+alias sudo='sudo -v; sudo'
 alias svim='sudo vim'
 alias tohex='printf "%x\n"'
 alias tooct='printf "%o\n"'
@@ -52,6 +54,7 @@ alias trim="sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g'"
 alias vi='vim'
 alias wcr='wc `find . -type f`'
 alias wget='wget -c'
+alias where="type -a"
 
 # if user is not root, pass all commands via sudo #
 if [ $UID -ne 0 ]; then
