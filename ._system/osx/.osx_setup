@@ -17,7 +17,7 @@ echo $'Install Xcode command-line tools\n'
 xcode-select --install
 
 # Homebrew
-if test ! $(which brew); then
+if test ! "$(which brew)"; then
   echo $'Install Homebrew\n'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -29,8 +29,8 @@ brew update \
   && brew cleanup
 
 [ ! -e "${HOME}/.brew-aliases" ] \
-    && ln -s "$(dirname $(readlink -f "${0}"))/.brew-aliases" ~
+    && ln -s "$(dirname "$(readlink -f "${0}")")/.brew-aliases" ~
 
 # Set default shell
-echo $(brew --prefix)/bin/bash | sudo tee --append /etc/shells
-chsh -s $(brew --prefix)/bin/bash
+echo "$(brew --prefix)"/bin/bash | sudo tee --append /etc/shells
+chsh -s "$(brew --prefix)"/bin/bash

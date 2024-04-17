@@ -8,7 +8,7 @@ dos2unix() {
 }
 
 if [ $# -lt 1 ]; then
-	echo "usage: $(basename $0) files"
+	echo "usage: $(basename "$0") files"
 else
 	dos2unix "$*"
 fi

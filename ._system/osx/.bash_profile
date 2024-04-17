@@ -2,7 +2,7 @@
 [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
-    export HOMEBREW_BUNDLE_FILE="$(dirname ${BASH_SOURCE[0]})/.brewfile"
+    export HOMEBREW_BUNDLE_FILE="$(dirname "${BASH_SOURCE[0]}")/.brewfile"
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
     export HOMEBREW_NO_AUTO_UPDATE=true
@@ -35,8 +35,8 @@ PATH=/opt/android-sdk-macosx/tools\
 
 # Command-line tools replacements
 if type brew &>/dev/null; then
-    for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
-    for d in ${HOMEBREW_PREFIX}/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
+    for d in "${HOMEBREW_PREFIX}"/opt/*/libexec/gnubin; do export PATH=$d:$PATH; done
+    for d in "${HOMEBREW_PREFIX}"/opt/*/libexec/gnuman; do export MANPATH=$d:$MANPATH; done
 fi
 PATH=$HOMEBREW_PREFIX/opt/curl/bin\
 :$HOMEBREW_PREFIX/opt/gnu-getopt/bin\

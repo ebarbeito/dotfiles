@@ -5,16 +5,16 @@ usage () {
 }
 
 create_pdf () {
-	man -t $manpage > /tmp/${manpage}.ps && ps2pdf /tmp/${manpage}.ps
+	man -t "$manpage" > /tmp/"${manpage}".ps && ps2pdf /tmp/"${manpage}".ps
 	if [ $? -ne 0 ]
 	then
 		## even if the ${manpage} man page doesn't exist
 		## /tmp/${manpage}.ps would have been created, so tidy-up
-		rm -f /tmp/${manpage}.ps
+		rm -f /tmp/"${manpage}".ps
 		exit 1
 	else
 		## remove temporary file
-		rm -f /tmp/${manpage}.ps
+		rm -f /tmp/"${manpage}".ps
 	fi
 }
 
@@ -26,7 +26,7 @@ then
 	exit 2
 fi
 
-if [ -f ${manpage}.pdf ]
+if [ -f "${manpage}".pdf ]
 then
 	read -p "${manpage}.pdf file exists, do you want to replace it? " ans_yn
 	case "$ans_yn" in
