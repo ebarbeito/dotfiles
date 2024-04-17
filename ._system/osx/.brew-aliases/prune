@@ -2,5 +2,4 @@
 # alias: brew prune
 #:  * `prune` [args...]
 #:    `brew prune` is an alias for `brew cleanup --prune=all`
-brew cleanup --prune=all $*
-
+brew cleanup --prune=all "$@"
