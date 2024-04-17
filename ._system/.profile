@@ -9,7 +9,7 @@ fi
 
 # load custom stuff
 for f in $CURRENT_DIR/custom/.{aliases,exports,functions,paths}; do
-    [ -r "$f" ] && source "$f"
+    [ -r "$f" ] && . "$f"
 done
 unset f
 
