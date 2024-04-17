@@ -203,7 +203,7 @@ colors:
 #
 # The bell is rung every time the BEL control character is received.
 bell:
-  # Visual Bell Animation
+  # Visual Bell Animation.
   #
   # Animation effect for flashing the screen when the visual bell is rung.
   #
@@ -290,7 +290,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 
-# Startup directory
+# Startup directory.
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
@@ -298,9 +298,9 @@ live_config_reload: true
 
 # WinPTY backend (Windows only)
 #
-# Alacritty defaults to using the newer ConPTY backend if it is available,
+# Alacrity defaults to using the newer ConPTY backend if it is available,
 # since it resolves a lot of bugs and is quite a bit faster. If it is not
-# available, the the WinPTY backend will be used instead.
+# available, the WinPTY backend will be used instead.
 #
 # Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
 # even if the ConPTY backend is available.
@@ -343,7 +343,7 @@ live_config_reload: true
     # on them. The available modifiers are documented in the key binding section.
     #modifiers: None
 
-# Mouse bindings
+# Mouse bindings.
 #
 # Mouse bindings are specified as a list of objects, much like the key
 # bindings further below.

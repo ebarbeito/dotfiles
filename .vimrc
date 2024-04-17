@@ -18,7 +18,7 @@ set pastetoggle=<f11>           " desactiva el autoindent al pegar texto
 syntax on                       " colorea la sintaxis
 set showmatch                   " autorelaciona los ( )'s, { }'s, etc...
 set autoindent                  " habilita el autoindentado
-set cindent                     " identacion c-style 
+set cindent                     " identacion c-style
 set nu                          " numeracion de filas
 set ignorecase                  " ignora distinción entre mayúsculas y minúsculas
 set smartcase                   " cuando usamos mayúsculas, las tiene en cuenta
@@ -36,7 +36,7 @@ set noerrorbells                " No devuelve un pitido (beep) en caso de error
 set ffs=unix
 set ff=unix
 
-" Para programacion
+" Para programación
 set comments=sl:/*,mb:\ *,elx:*
 
 "
