@@ -3,16 +3,16 @@
 "      |o_o |
 "      |:_/ |       Vimfile : .vimrc
 "     //   \ \      Version : 1.0
-"    (| vim | )     Author  : Enrique Barbeito García
+"    (| vim | )     Author  : Enrique Barbeito GarcÃ­a
 "   /'\_   _/`\	              enrique(at)barbeito.org
 "   \___)=(___/
 "
 " ------------------------------------- 2003/05/13 00:01:10 ---
 
 set background=dark             " colores para fondos negros
-set ts=4                        " tamaño de tabulación (4)
+set ts=4                        " tamaÃ±o de tabulaciÃ³n (4)
 set noexpandtab                 " no convierte las tabulaciones a espacios
-set sw=4                        " tamaño de indentado (igual que 'ts')
+set sw=4                        " tamaÃ±o de indentado (igual que 'ts')
 set pastetoggle=<f11>           " desactiva el autoindent al pegar texto
 
 syntax on                       " colorea la sintaxis
@@ -20,9 +20,9 @@ set showmatch                   " autorelaciona los ( )'s, { }'s, etc...
 set autoindent                  " habilita el autoindentado
 set cindent                     " identacion c-style 
 set nu                          " numeracion de filas
-set ignorecase                  " ignora distinción entre mayúsculas y minúsculas
-set smartcase                   " cuando usamos mayúsculas, las tiene en cuenta
-set incsearch                   " nos sitúa automáticamente en la cadena que estemos buscando
+set ignorecase                  " ignora distinciÃ³n entre mayÃºsculas y minÃºsculas
+set smartcase                   " cuando usamos mayÃºsculas, las tiene en cuenta
+set incsearch                   " nos sitÃºa automÃ¡ticamente en la cadena que estemos buscando
 
 set bs=2                        " backspace normal
 set backspace=indent,eol,start  " permite usar el backspace en cualquier cosa
@@ -42,7 +42,7 @@ set comments=sl:/*,mb:\ *,elx:*
 "
 " Abreviaturas
 "
-"ab ebg Enrique Barbeito García
+"ab ebg Enrique Barbeito GarcÃ­a
 ab _nick neuronal
 ab _mail1 enrique@barbeito.org
 ab _mail2 neuronal@systemfailure.org
