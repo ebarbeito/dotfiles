@@ -2,7 +2,8 @@
 [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
-    export HOMEBREW_BUNDLE_FILE="$(dirname "${BASH_SOURCE[0]}")/.brewfile"
+    HOMEBREW_BUNDLE_FILE="$(dirname "${BASH_SOURCE[0]}")/.brewfile"
+    export HOMEBREW_BUNDLE_FILE
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
     export HOMEBREW_NO_AUTO_UPDATE=true
@@ -14,13 +15,15 @@ export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
 
 # java
 if type /usr/libexec/java_home &>/dev/null; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
+    JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # go
 if type go &>/dev/null; then
-    export GOROOT="$(brew --prefix golang)/libexec"
+    GOROOT="$(brew --prefix golang)/libexec"
+    export GOROOT
     export GOPATH=$HOME/go
     export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 fi
