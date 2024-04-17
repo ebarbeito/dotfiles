@@ -1,11 +1,10 @@
 #!/bin/sh
 
-function dos2unix
-{
-	for file in $*; do
-		cat $file | sed 's///g' > $file.out
-		mv $file.out $file
-	done
+dos2unix() {
+    for file in "$@"; do
+        sed 's/\r$//' "$file" > "$file.out"
+        mv "$file.out" "$file"
+    done
 }
 
 if [ $# -lt 1 ]; then
