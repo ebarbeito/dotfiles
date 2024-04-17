@@ -3,4 +3,3 @@
 PID=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
 [ -n "$PID" ] && echo "$PID" | xargs kill -9
-

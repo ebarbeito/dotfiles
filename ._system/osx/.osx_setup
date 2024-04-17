@@ -4,7 +4,11 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until this script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Change DNS resolvers in wifi network service
 networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
@@ -24,12 +28,12 @@ if test ! "$(which brew)"; then
   brew tap buo/cask-upgrade
 fi
 
-brew update \
-  && brew bundle install --file .brewfile \
-  && brew cleanup
+brew update &&
+  brew bundle install --file .brewfile &&
+  brew cleanup
 
-[ ! -e "${HOME}/.brew-aliases" ] \
-    && ln -s "$(dirname "$(readlink -f "${0}")")/.brew-aliases" ~
+[ ! -e "${HOME}/.brew-aliases" ] &&
+  ln -s "$(dirname "$(readlink -f "${0}")")/.brew-aliases" ~
 
 # Set default shell
 echo "$(brew --prefix)"/bin/bash | sudo tee --append /etc/shells

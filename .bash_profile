@@ -22,12 +22,12 @@ shopt -s histappend
 # load shell definitions
 for f in $DOTFILES/.shell.d/.{aliases,exports,functions,paths,prompt}; do
     [ -r "$f" ] && source "$f"
-done; unset f
+done
+unset f
 
 # extended profile by system
 if [ -r "$DOTFILES"/._system/.profile ]; then
-	. "$DOTFILES"/._system/.profile
+    . "$DOTFILES"/._system/.profile
 fi
 
 unset DOTFILES
-
