@@ -27,6 +27,7 @@ unset f
 
 # extended profile by system
 if [ -r "$DOTFILES"/._system/.profile ]; then
+    # shellcheck source=./._system/.profile
     . "$DOTFILES"/._system/.profile
 fi
 

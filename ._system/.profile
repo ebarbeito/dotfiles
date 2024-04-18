@@ -2,8 +2,10 @@ CURRENT_DIR=$(dirname "${BASH_SOURCE[0]}")
 
 # load system configuration
 if [ "$(uname)" = "Darwin" ]; then
+	# shellcheck source=./osx/.bash_profile
 	. "$CURRENT_DIR"/osx/.bash_profile
 elif [ "$(uname)" = "Linux" ]; then
+	# shellcheck source=./linux/.bash_profile
 	. "$CURRENT_DIR"/linux/.bash_profile
 fi
 
