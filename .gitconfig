@@ -31,6 +31,7 @@
 [alias]
 	a = add
 	br = branch -v
+	branches = branch -a
 	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	co = checkout
 	ci = commit -v
