@@ -29,10 +29,11 @@
 	new = green bold
 
 [alias]
+	a = add
 	br = branch -v
 	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
 	co = checkout
-	ci = commit
+	ci = commit -v
 	df = diff
 	st = status --branch --short --untracked-files=normal
 	up = pull --rebase
