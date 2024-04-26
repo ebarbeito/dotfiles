@@ -2,6 +2,13 @@
 "\C-[[A": history-search-backward
 "\C-[[B": history-search-forward
 
+# Cursor back and forward by one word
+"\e[1;5D": backward-word ### Alt left
+"\e[1;5C": forward-word ### Alt right
+
+# Delete preceding word with Alt+Delete
+"\e[3;3~": kill-word
+
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
 
@@ -23,3 +30,10 @@ set completion-ignore-case on
 # pasted text is bracketed with control sequences ESC [ 200 ~ and ESC [ 201 ~
 set enable-bracketed-paste on
 
+# List all possible completions if there are multiple matches
+set show-all-if-ambiguous on
+
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
