@@ -1,6 +1,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
+	attributesFile = ~/.gitattributes
 	ignorecase = false
 	pager = less -R
 
