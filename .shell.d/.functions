@@ -46,6 +46,12 @@ t() { tail -f $1 | perl -pe "s/$2/\e[1;35;40m$&\e[0m/g"; }
 # decimal to binary
 tobin() { echo "obase=2; $1" | bc; }
 
+# unix timestamp to human date
+todatetime() { date -u -d @${1}; }
+
+# human date to unix timestamp
+totimestamp() { date -d "${1}" +%s; }
+
 # show uniq lines
 uniqlines() { sort $1 | uniq -u; }
 
