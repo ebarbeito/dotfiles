@@ -19,16 +19,12 @@ echo "Updating package lists..."
 sudo apt update &&
 echo && echo "Upgrading installed packages..."
 sudo apt upgrade -y &&
-echo && echo "Removing unnecessary packages..."
-sudo apt autoremove -y &&
 echo && echo "Cleaning apt cache..."
 sudo apt clean &&
 echo "Cleaning snap cache..."
 sudo rm -rf /var/cache/snapd/* &&
-echo "Cleaning system caches..."
-sudo apt-get clean &&
-sudo apt-get autoclean &&
-sudo apt-get autoremove --purge &&
+echo "Cleaning system caches and packages..."
+sudo apt-get autoremove -y --purge &&
 sudo rm -rf /var/cache/apt/* &&
 if [ -f /var/run/reboot-required ] || [ -f /run/reboot-required ]; then
     echo && echo "Upgrades require reboot"
