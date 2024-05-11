@@ -10,4 +10,6 @@ else
 	}
 fi
 
-export PS1="\n\342\224\214 \h \[\e[1;32m\]\W\[\e[0m\] \$(__git_ps1 '[%s]')\n\342\224\224 (j:\[\e[1;32m\]\j\[\e[0m\], e:\[\e[1;32m\]\$?\[\e[0m\]) $ "
+PROMPT=$(if [ $(id -u) -eq "0" ]; then echo "#"; else echo "\$"; fi)
+export PS1="\n\342\224\214 \h \[\e[1;32m\]\W\[\e[0m\] \$(__git_ps1 '[%s]')\n\342\224\224 (j:\[\e[1;32m\]\j\[\e[0m\], e:\[\e[1;32m\]\$?\[\e[0m\]) ${PROMPT} "
+unset PROMPT
