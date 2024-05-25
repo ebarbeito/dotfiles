@@ -28,6 +28,9 @@ if type go &>/dev/null; then
     export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 fi
 
+# fzf bash integration
+eval "$(fzf --bash)"
+
 # extended path defined by /usr/libexec/path_helper -s
 # see /etc/paths, /etc/paths.d
 PATH=/opt/android-sdk-macosx/tools\
@@ -72,3 +75,4 @@ alias o.='open .'
 alias ping='/sbin/ping'
 alias rmdss='find . -type f -name .DS_Store -exec rm -f {} \;'
 alias nameservers="scutil --dns | grep 'nameserver\[[0-9]*\]' | sort | uniq | trim"
+
