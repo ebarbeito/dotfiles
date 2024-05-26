@@ -123,7 +123,7 @@ cask "zoom"
 
 # include an additional custom Brewfile
 filepath = File.expand_path("~/.dotfiles/._system/custom/.brewfile")
-if File.exists?(filepath)
+if File.exist?(filepath)
   instance_eval(File.read(filepath))
 end
 
