@@ -554,3 +554,7 @@ $RECYCLE.BIN/
 # rsync excluded from
 .rsyncignore
 
+# Syncthing files
+.stfolder
+.stignore
+
