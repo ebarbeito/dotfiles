@@ -37,6 +37,7 @@
 	co = checkout
 	ci = commit -v
 	df = diff
+	vdf = difftool -t vimdiff -y
 	st = status --branch --short --untracked-files=normal
 	up = pull --rebase
 	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
@@ -49,9 +50,11 @@
 	ignored = !git status --ignored -s | grep '!!' | cut -d' ' -f2
 	last = log --abbrev-commit -1 HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --stat
 	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	remotes = remote -v
 	go = "!f() { git switch -c \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
+	rup = remote update --prune
 	tags = tag -l
 	top = shortlog -nsw -e
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
