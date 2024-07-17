@@ -37,6 +37,7 @@ alias df='df -H'
 type colordiff >/dev/null 2>&1 && alias diff='colordiff'
 alias functions='declare -f | grep "^[a-z].* ()" | sed "s/{$//"'
 alias h="history"
+alias hr='printf $(printf "\e[$(shuf -i 91-97 -n 1);1m%%%ds\e[0m\n" $(tput cols)) | tr " " ='
 alias killjobs='kill -9 $(jobs -p)'
 alias mount='mount | column -t'
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
