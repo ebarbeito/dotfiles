@@ -28,6 +28,7 @@ alias lad='la | grep "^d"' # list directories
 alias lal='la | grep "^l"' # list links
 
 # docker aliases
+alias docker-compose='docker compose'
 alias docker-nuke='docker system prune -f --all --volumes'
 
 # more aliases
