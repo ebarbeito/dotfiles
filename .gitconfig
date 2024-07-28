@@ -30,17 +30,29 @@
 	new = green bold
 
 [alias]
+	# Daily basics shortcuts
 	a = add
 	br = branch -v
+	ci = commit -v
+	df = diff --color
+	co = checkout
+	fp = fetch --all --prune
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --stat
+	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	go = "!f() { git switch -c \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
+	pu = pull --rebase
+	rb = rebase -i
+	rt = restore
+	rup = remote update --prune
+	st = status --branch --short --untracked-files=normal
+	up = push -u origin HEAD
+	vdf = difftool -t vimdiff -y
+
+	# Other utilities
+	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	branches = branch -a
 	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
-	co = checkout
-	ci = commit -v
-	df = diff
-	vdf = difftool -t vimdiff -y
-	st = status --branch --short --untracked-files=normal
-	up = pull --rebase
-	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	changeset = !sh -c 'git diff --stat $1^..$1' -
 	churn = "!f() { git log --format=format: --name-only --since=${1:-12.month} | egrep -v \"^$\" | sort | uniq -c | sort -nr | head -${2:-50}; }; f"
 	coprev = !git checkout HEAD^
@@ -49,13 +61,8 @@
 	coinit = !git checkout `git log --oneline|tail -n1 |cut -d ' ' -f 1`
 	ignored = !git status --ignored -s | grep '!!' | cut -d' ' -f2
 	last = log --abbrev-commit -1 HEAD
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-	ll = log --stat
-	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	pushf = push --force-with-lease
 	remotes = remote -v
-	go = "!f() { git switch -c \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
-	rup = remote update --prune
 	tags = tag -l
 	top = shortlog -nsw -e
 	unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
