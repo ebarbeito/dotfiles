@@ -68,7 +68,6 @@ brew cleanup -s &&
 rm -rf "$(brew --cache)" &&
 brew doctor
 '
-alias cask='brew cask'
 alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
 alias htop='sudo htop'
 alias myip_lan='ipconfig getifaddr en0'
