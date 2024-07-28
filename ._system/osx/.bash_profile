@@ -52,6 +52,7 @@ MANPATH=$HOMEBREW_PREFIX/opt/curl/share/man\
 :$MANPATH; export MANPATH
 
 # alias definitions
+alias bandwhich='sudo bandwhich'
 if ls --color -d . >/dev/null 2>&1; then
     alias ls='ls --color=auto'
 elif ls -G -d . >/dev/null 2>&1; then
