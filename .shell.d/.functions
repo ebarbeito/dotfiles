@@ -23,6 +23,9 @@ mkcd() { /bin/mkdir -p $1 && cd $1; }
 # top ten most used commands
 mostused() { history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head; }
 
+# monitor http traffic on a given interface and port
+ngrep_http() { sudo ngrep -d "${1:-lo0}" -t '^(GET|POST|PUT|DELETE|HEAD|OPTIONS|PATCH|TRACE|CONNECT) ' "tcp and port ${2:-80}"; }
+
 # random password generation
 passwdgen() { tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' < /dev/urandom | head -c ${1:-16}; }
 
