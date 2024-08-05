@@ -4,6 +4,7 @@
 	attributesFile = ~/.gitattributes
 	ignorecase = false
 	pager = less -R
+	autocrlf = input
 
 [init]
 	defaultBranch = main
