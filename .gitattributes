@@ -4,11 +4,6 @@
 # Normalize line endings to LF (Unix-style) on checkout
 * text eol=lf
 
-# Ignore whitespace changes for certain file types
-*.css   diff=css
-*.html  diff=html
-*.js    diff=javascript
-
 # Archives
 *.7z       binary
 *.bz       binary
@@ -30,7 +25,7 @@
 *.zip      binary
 *.zst      binary
 
-# Treat graphic extensions
+# Graphics
 *.png      binary
 *.jpg      binary
 *.jpeg     binary
@@ -82,11 +77,18 @@
 *.yaml     text diff=yaml
 *.yml      text diff=yaml
 
+# Web
+*.css   diff=css
+*.html  diff=html
+*.js    diff=javascript
+*.phar  -diff
+*.php   diff=php
+
+# Text files where line endings should be preserved
+*.patch -text
+
 # Exclude files from exporting
 .editorconfig  export-ignore
 .gitattributes export-ignore
 .gitignore     export-ignore
 .gitkeep       export-ignore
-
-# Text files where line endings should be preserved
-*.patch -text
