@@ -33,3 +33,5 @@ export MANPAGER='less -X'
 # checks current architecture
 [ -z "$ARCH" ] && export ARCH=$(uname -m)
 
+# path for xdg base directory specification
+export XDG_CONFIG_HOME=$HOME/.config
