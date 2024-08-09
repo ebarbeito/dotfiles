@@ -193,22 +193,21 @@ flycheck_*.el
 # Output of the go coverage tool, specifically when used with LiteIDE
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
 
 ### Go Patch ###
 /Godeps/
 
 ### Intellij ###
 .idea
+.idea-compl
+*.iml
+*.ipr
+*.iws
+*.sc
 
 # CMake
 cmake-build-*/
-
-# File-based project format
-*.iws
-
-# IntelliJ
-out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -221,10 +220,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
-*.iml
-modules.xml
-*.ipr
 
 ### Java ###
 # Compiled class file
@@ -479,13 +474,6 @@ dmypy.json
 build-iPhoneOS/
 build-iPhoneSimulator/
 
-## Specific to RubyMotion (use of CocoaPods):
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-# vendor/Pods/
-
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
@@ -558,3 +546,5 @@ $RECYCLE.BIN/
 .stfolder
 .stignore
 
+# vscode
+.vscode

@@ -44,7 +44,7 @@
 	ll = log --stat
 	ls = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	go = "!f() { git switch -c \"$1\" 2>/dev/null || git switch \"$1\"; }; f"
-	pu = pull --rebase
+	pu = pull --rebase --stat
 	rb = rebase -i
 	rt = restore
 	rup = remote update --prune

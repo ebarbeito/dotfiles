@@ -26,10 +26,10 @@
 *.zst      binary
 
 # Graphics
-*.png      binary
-*.jpg      binary
-*.jpeg     binary
-*.gif      binary
+*.png      binary diff=exif
+*.jpg      binary diff=exif
+*.jpeg     binary diff=exif
+*.gif      binary diff=exif
 *.tif      binary
 *.tiff     binary
 *.ico      binary
