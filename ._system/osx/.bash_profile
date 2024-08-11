@@ -4,6 +4,7 @@ HOMEBREW_PREFIX=$(brew --prefix)
 if type brew &>/dev/null; then
     HOMEBREW_BUNDLE_FILE="$(dirname "${BASH_SOURCE[0]}")/.brewfile"
     export HOMEBREW_BUNDLE_FILE
+    export HOMEBREW_CASK_OPTS="--no-quarantine"
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
     export HOMEBREW_NO_AUTO_UPDATE=true
