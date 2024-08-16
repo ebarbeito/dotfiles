@@ -4,5 +4,6 @@
 .git
 .gitignore
 install.sh
+LICENSE
 README.md
 uninstall.sh
