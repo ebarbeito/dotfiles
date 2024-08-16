@@ -1,19 +1,22 @@
 [core]
+	attributesFile = ~/.gitattributes
+	autocrlf = input
 	editor = vim
 	excludesfile = ~/.gitignore_global
-	attributesFile = ~/.gitattributes
 	ignorecase = false
 	pager = less -R
-	autocrlf = input
+	precomposeunicode = true
+	preloadindex = true
 
 [init]
 	defaultBranch = main
 
 [pull]
-    rebase = false
+	ff = only
+	rebase = false
 
 [push]
-    default = current
+	default = current
 
 [color]
 	ui = auto
@@ -29,6 +32,9 @@
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
+[merge]
+	ff = false
 
 [alias]
 	# Daily basics shortcuts
