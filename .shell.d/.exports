@@ -4,6 +4,7 @@ export CLICOLOR=1
 
 # vim as the default editor
 export EDITOR='vim'
+export VISUAL='vim'
 
 # grep with color (violet)
 export GREP_COLOR='mt=1;35;40'
