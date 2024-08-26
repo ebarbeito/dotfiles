@@ -16,10 +16,13 @@ export HISTCONTROL='ignoreboth:erasedups'
 export HISTFILE=~/.bash_history
 
 # history: in memory history size
-export HISTSIZE=8000
+export HISTSIZE=8192
 
 # history: on disk history size
-export HISTFILESIZE=8000
+export HISTFILESIZE=8192
+
+# Ignore specific commands from being saved in history
+export HISTIGNORE="&:[bf]g:cls:exit:jobs:l"
 
 # history: display the timestamp along with the command
 #export HISTTIMEFORMAT='%F %T '
