@@ -545,6 +545,7 @@ $RECYCLE.BIN/
 # Syncthing files
 .stfolder
 .stignore
+*.sync-conflict-*
 
 # vscode
 .vscode
