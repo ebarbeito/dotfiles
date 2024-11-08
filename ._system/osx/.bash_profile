@@ -79,4 +79,4 @@ alias o.='open .'
 alias ping='/sbin/ping'
 alias rmdss='find . -type f -name .DS_Store -exec rm -f {} \;'
 alias nameservers="scutil --dns | grep 'nameserver\[[0-9]*\]' | sort | uniq | trim"
-
+alias tldr='TLDR_AUTO_UPDATE_DISABLED=1 tldr'
