@@ -89,9 +89,3 @@ dsc() { docker ps -a | sed 1d | fzf -m -1 -q "$1" | awk '{print $1}' | xargs doc
 # docker: select running docker container to get an interactive tty
 dshc() { local c=$(docker ps | sed 1d | fzf -1 -q "$1" | awk '{print $1}'); docker exec -it $c sh; }
 
-
-# youtube: download entry as mp3 high quality
-yt2mp3() { youtube-dl --ignore-config -i --extract-audio --audio-format mp3 --audio-quality 0 $1; }
-
-# youtube: download playlist as mp3
-yt2mp3s() { youtube-dl --ignore-config --download-archive _downloaded.txt --no-overwrites -ic --yes-playlist --extract-audio --audio-format mp3 --audio-quality 0 $1; }

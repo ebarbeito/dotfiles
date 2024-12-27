@@ -77,7 +77,6 @@ brew "wdiff"
 brew "wget"
 brew "wrk"
 brew "xz"
-brew "youtube-dl"
 
 cask "alacritty"
 cask "android-file-transfer"
