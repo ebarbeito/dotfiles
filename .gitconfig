@@ -62,7 +62,8 @@
 	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 	branches = branch -a
 	brclean = !git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d
-	changeset = !sh -c 'git diff --stat $1^..$1' -
+	changed = !git diff --stat $(git merge-base --fork-point $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/origin/@@\") HEAD)
+	changed-ls = !git diff --name-only $(git merge-base --fork-point $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/origin/@@\") HEAD)
 	churn = "!f() { git log --format=format: --name-only --since=${1:-12.month} | egrep -v \"^$\" | sort | uniq -c | sort -nr | head -${2:-50}; }; f"
 	coprev = !git checkout HEAD^
 	conext = !git checkout `git log --reverse --ancestry-path HEAD..master | head -n 1 | cut -d ' ' -f 2`
