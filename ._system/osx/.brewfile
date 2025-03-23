@@ -1,6 +1,4 @@
 tap "buo/cask-upgrade"
-tap "homebrew/aliases"
-tap "homebrew/bundle"
 
 brew "ack"
 brew "asciinema"
