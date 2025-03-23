@@ -126,7 +126,6 @@ cask "typora"
 cask "utm"
 cask "visual-studio-code"
 cask "vlc"
-cask "whatsapp@beta"
 cask "webpquicklook"
 cask "zoom"
 
