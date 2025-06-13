@@ -6,14 +6,14 @@ color brightyellow "\<if\>" "\<while\>" "\<do\>" "\<else\>" "\<case\>" "\<switch
 color brightcyan "#define" "#include" "#ifn*def" "#endif"
 color brightcyan "#elif" "#else" "#if"
 color brightyellow "<[^= ]*>" ""(\\.|[^\"])*""
- 
+
 ## This string is VERY resource intensive!!!
 # color brightyellow start=""(\\.|[^\"])*\\( |  )*$" end="^(\\.|[^\"])*""
- 
+
 ## And we want to have some nice comment highlighting too
 color brightblue "//.*"
 color brightblue start="/\*" end="\*/"
- 
+
 #
 #set autoindent
 set nowrap
