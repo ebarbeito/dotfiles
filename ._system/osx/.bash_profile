@@ -1,3 +1,8 @@
+# Load SSH keys stored in macOS Keychain
+if ssh-add -l 2>/dev/null | grep -q 'no identities'; then
+    ssh-add --apple-load-keychain &>/dev/null
+fi
+
 # brew
 [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 HOMEBREW_PREFIX=$(brew --prefix)
