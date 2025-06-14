@@ -4,6 +4,7 @@
 .bin/.unused
 .config/*
 !.config/alacritty
+!.config/curlrc
 !.config/git
 .irssi/irclogs
 !.irssi/irclogs/.gitkeep
