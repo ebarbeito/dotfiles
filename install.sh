@@ -9,3 +9,6 @@ for path in "${DIR}"/*; do
     [ -r "$HOME/${filename}" ] && continue
     ln -sv "${path}" "$HOME"
 done
+
+# XDG Base Directory
+mkdir -p ~/{.config,.cache,.local/share,.local/state}

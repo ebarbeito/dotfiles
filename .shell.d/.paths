@@ -7,7 +7,6 @@ fi
 if [ -d "$HOME/.bin" ]; then
   PATH="$HOME/.bin:$PATH"
 fi
-if [ -d "$HOME/.local/bin" ] ; then
-  PATH="$HOME/.local/bin:$PATH"
+if [ -d "$XDG_BIN_HOME" ]; then
+  PATH="$XDG_BIN_HOME:$PATH"
 fi
-
