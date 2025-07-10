@@ -353,12 +353,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
-.env
-.env.*
-!.env.dist
-!.env.example
-
 # next.js build output
 .next
 
