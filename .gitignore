@@ -1,6 +1,5 @@
 ._system/osx/.brewfile.lock.json
-._system/custom/*
-!._system/custom/.gitkeep
+._system/custom
 .bin/.unused
 .config/*
 !.config/alacritty
