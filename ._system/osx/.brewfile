@@ -75,6 +75,7 @@ brew "xz"
 
 cask "brave-browser"
 cask "chatgpt"
+cask "datagrip"
 cask "deepl"
 cask "docker"
 cask "firefox@developer-edition"
