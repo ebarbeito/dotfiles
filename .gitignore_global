@@ -411,3 +411,7 @@ $RECYCLE.BIN/
 
 # vscode
 .vscode
+
+# Personal Cursor AI agent instructions
+.cursor/**/ebarbeito
+**/var/cursor
