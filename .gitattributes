@@ -23,6 +23,9 @@
 *.zip      binary
 *.zst      binary
 
+# Other archives
+*.jar -text -diff
+
 # Graphics
 *.png      binary diff=exif
 *.jpg      binary diff=exif
@@ -33,6 +36,8 @@
 *.ico      binary
 *.svg      text
 *.eps      binary
+
+*.mp4      binary
 
 # Documents
 *.bibtex   text diff=bibtex

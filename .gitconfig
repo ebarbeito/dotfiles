@@ -7,6 +7,7 @@
 	pager = less -R
 	precomposeunicode = true
 	preloadindex = true
+	safecrlf = false
 
 [init]
 	defaultBranch = main
