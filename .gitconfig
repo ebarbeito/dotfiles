@@ -1,6 +1,6 @@
 [core]
-	attributesFile = ~/.gitattributes
-	autocrlf = input
+	attributesfile = ~/.gitattributes
+	autocrlf = false
 	editor = vim
 	excludesfile = ~/.gitignore_global
 	ignorecase = false

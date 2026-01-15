@@ -1,8 +1,6 @@
-# Set default behavior for text files
-* text=auto
-
-# Normalize line endings to LF (Unix-style) on checkout
-* text eol=lf
+# Set default behavior for all files
+# Force LF line endings for text files, prevent Windows line endings
+* text=auto eol=lf
 
 # Archives
 *.7z       binary
