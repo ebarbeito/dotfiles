@@ -21,7 +21,7 @@ echo $'Install Xcode command-line tools\n'
 xcode-select --install
 
 # Homebrew
-if test ! "$(which brew)"; then
+if ! command -v brew >/dev/null; then
   echo $'Install Homebrew\n'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
