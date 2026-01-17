@@ -4,6 +4,7 @@
 .config/*
 !.config/alacritty
 !.config/curlrc
+!.config/readline
 !.config/git
 .irssi/irclogs
 !.irssi/irclogs/.gitkeep
