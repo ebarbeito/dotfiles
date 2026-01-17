@@ -6,6 +6,7 @@
 !.config/curlrc
 !.config/readline
 !.config/git
+!.config/wget
 .irssi/irclogs
 !.irssi/irclogs/.gitkeep
 .irssi/scripts
