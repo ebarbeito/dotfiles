@@ -5,6 +5,7 @@
 !.config/alacritty
 !.config/curlrc
 !.config/readline
+!.config/screen
 !.config/git
 !.config/tmux
 !.config/wget

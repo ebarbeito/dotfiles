@@ -47,4 +47,5 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # program setup to attach to xdg
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node/repl_history";
+export SCREENRC="$XDG_CONFIG_HOME/screen/config"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
