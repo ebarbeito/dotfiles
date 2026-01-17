@@ -4,9 +4,10 @@
 .config/*
 !.config/alacritty
 !.config/curlrc
+!.config/git
+!.config/nano
 !.config/readline
 !.config/screen
-!.config/git
 !.config/tmux
 !.config/wget
 .irssi/irclogs
