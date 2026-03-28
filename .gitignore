@@ -2,7 +2,6 @@
 ._system/custom
 .bin/.unused
 .config/*
-!.config/alacritty
 !.config/curlrc
 !.config/git
 !.config/ghostty
