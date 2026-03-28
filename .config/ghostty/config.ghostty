@@ -1,0 +1,40 @@
+
+# The syntax is "key = value". The whitespace around the
+# equals doesn't matter.
+
+# Terminal / Core Behavior
+term = xterm-ghostty
+theme = iTerm2 Tango Dark
+minimum-contrast = 1.1
+bold-is-bright = true
+
+# Window / Appearance
+background-opacity = 1
+window-padding-x = 10
+window-save-state = never
+
+# Font / Typography
+font-family = JetBrains Mono
+font-size = 14
+font-style-bold = false
+font-thicken = true
+
+# Mouse
+mouse-hide-while-typing = true
+mouse-shift-capture = false
+mouse-scroll-multiplier = 8
+
+# Notifications
+desktop-notifications = true
+
+# Scrolling
+scrollback-limit = 10000000
+
+# Keybindings
+keybind = super+left=previous_tab
+keybind = super+right=next_tab
+
+# macOS Specific
+macos-non-native-fullscreen = true
+macos-titlebar-style = tabs
+macos-window-shadow = true

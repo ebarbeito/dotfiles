@@ -5,6 +5,7 @@
 !.config/alacritty
 !.config/curlrc
 !.config/git
+!.config/ghostty
 !.config/nano
 !.config/readline
 !.config/screen
