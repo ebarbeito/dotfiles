@@ -72,6 +72,7 @@ brew "vim"
 brew "watch"
 brew "wdiff"
 brew "wget"
+brew "witr"
 brew "wrk"
 brew "xz"
 
