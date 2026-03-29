@@ -1,4 +1,10 @@
-CURRENT_DIR=$(dirname "${BASH_SOURCE[0]}")
+if [ -n "$BASH_VERSION" ]; then
+    CURRENT_DIR=$(dirname "${BASH_SOURCE[0]}")
+elif [ -n "$ZSH_VERSION" ]; then
+    CURRENT_DIR=$(dirname "${(%):-%x}")
+else
+    CURRENT_DIR=$(dirname "$0")
+fi
 
 # load system configuration
 if [ "$(uname)" = "Darwin" ]; then
