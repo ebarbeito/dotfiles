@@ -1,15 +1,14 @@
-if command -v git >/dev/null 2>&1 && [ -r "$HOME/.bin/git-prompt.sh" ]; then
-	. "$HOME/.bin/git-prompt.sh"
+if [ -r "$HOME/.bin/git-prompt.sh" ]; then
+    . "$HOME/.bin/git-prompt.sh"
 
-	GIT_PS1_SHOWDIRTYSTATE=1
-	GIT_PS1_SHOWSTASHSTATE=1
-	GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
 else
-	__git_ps1 () {
-		return
-	}
+    __git_ps1() { :; }
 fi
 
-PROMPT=$(if [ $(id -u) -eq "0" ]; then echo "#"; else echo "\$"; fi)
-export PS1="\n\342\224\214 \h \[\e[1;32m\]\W\[\e[0m\] \$([ \"\$(type -t __git_ps1)\" = \"function\" ] && __git_ps1 '[%s]')\n\342\224\224 (j:\[\e[1;32m\]\j\[\e[0m\], e:\[\e[1;32m\]\$?\[\e[0m\]) ${PROMPT} "
+PROMPT=$(if [ "$(id -u)" -eq "0" ]; then echo "#"; else echo "\$"; fi)
+PROMPT_COMMAND='__EXIT_CODE=$?; __GIT_PROMPT=$(__git_ps1 "[%s]")'
+export PS1="\n\342\224\214 \h \[\e[1;32m\]\W\[\e[0m\] \${__GIT_PROMPT}\n\342\224\224 (j:\[\e[1;32m\]\j\[\e[0m\], e:\[\e[1;32m\]\${__EXIT_CODE}\[\e[0m\]) ${PROMPT} "
 unset PROMPT
