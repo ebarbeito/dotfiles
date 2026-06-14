@@ -66,8 +66,7 @@ elif ls -G -d . >/dev/null 2>&1; then
 fi
 alias sysupgrade='
 brew update &&
-brew upgrade &&
-brew cu --all --yes --cleanup &&
+brew upgrade --greedy --yes &&
 brew bundle install &&
 brew bundle cleanup -f &&
 brew cleanup -s &&
