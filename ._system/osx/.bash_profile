@@ -71,9 +71,9 @@ brew bundle install &&
 brew bundle cleanup -f &&
 brew cleanup -s &&
 rm -rf "$(brew --cache)" &&
-npm outdated -g --depth=0 &&
+npm install -g --no-fund npm &&
+(npm outdated -g --depth=0 || true) &&
 npm update -g --no-fund &&
-npm install -g npm &&
 brew doctor
 '
 alias flushdns='dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
