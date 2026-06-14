@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -10,6 +12,8 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
+export HOMEBREW_REQUIRE_TAP_TRUST=1
+
 # Change DNS resolvers in wifi network service
 networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4
 
@@ -18,7 +22,7 @@ echo $'Apply all software updates\n'
 sudo softwareupdate -ia
 
 echo $'Install Xcode command-line tools\n'
-xcode-select --install
+xcode-select --install || true
 
 # Homebrew
 if ! command -v brew >/dev/null; then
@@ -27,9 +31,12 @@ if ! command -v brew >/dev/null; then
   [ -d "/opt/homebrew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew update &&
-  brew bundle install --file .brewfile &&
-  brew cleanup
+# Explicit trust declarations
+brew trust --formula teamookla/speedtest/speedtest
+
+brew update
+brew bundle install --file .brewfile
+brew cleanup
 
 [ ! -e "${HOME}/.brew-aliases" ] &&
   ln -s "$(dirname "$(readlink -f "${0}")")/.brew-aliases" ~

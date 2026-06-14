@@ -13,6 +13,7 @@ if type brew &>/dev/null; then
     export HOMEBREW_FORCE_BREWED_CURL=1
     export HOMEBREW_NO_ANALYTICS=true
     export HOMEBREW_NO_AUTO_UPDATE=true
+    export HOMEBREW_REQUIRE_TAP_TRUST=1
 fi
 
 # bash completion in mac
