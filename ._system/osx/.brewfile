@@ -105,6 +105,7 @@ cask "typora"
 cask "utm"
 cask "vicinae"
 cask "vlc"
+cask "whatcable"
 
 # include an additional custom Brewfile
 filepath = File.expand_path("~/.dotfiles/._system/custom/.brewfile")
