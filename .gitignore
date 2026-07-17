@@ -9,6 +9,7 @@
 !.config/readline
 !.config/screen
 !.config/tmux
+!.config/vicinae
 !.config/wget
 .irssi/irclogs
 !.irssi/irclogs/.gitkeep
